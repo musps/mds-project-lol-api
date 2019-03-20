@@ -12,3 +12,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.app {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.menuTop {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: #EDEDED !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  height: 46px;
+}
+
+.btnGoBack {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}

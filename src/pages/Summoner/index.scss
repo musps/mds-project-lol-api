@@ -1,0 +1,50 @@
+.summonerPage {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  .summonerPageHeader {
+    background: linear-gradient(rgb(7, 71, 166) 0%, rgb(7, 71, 166) 100%);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid white;
+
+    .summonerName {
+      color: white;
+      padding: 10px 0 0 0;
+      font-size: 18px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .summonerPageContent {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 100px 20px;
+
+    @media screen and (max-width: 650px) {
+      padding: 0 0 100px 0;
+    }
+  }
+
+  .summonerRankStatus {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px;
+    justify-content: center;
+
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
+      padding: 20px;
+    }
+  }
+}

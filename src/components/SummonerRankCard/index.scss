@@ -1,0 +1,31 @@
+.summonerRankCard {
+  margin: 0 20px 0 0 !important;
+  width: 33.333% !important;
+
+  &:last-child {
+    margin: 0 !important;
+  }
+
+  .rankImg {
+    background: rgba(0,0,0,.05);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 200px;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 100% !important;
+    margin: 0 0 20px 0 !important;
+
+    &:last-child {
+      margin: 0 !important;
+    }
+
+    .rankImg {
+      display: none;
+    }
+  }
+}
