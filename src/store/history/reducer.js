@@ -61,6 +61,13 @@ function historyInitialize(state) {
   return nextState
 }
 
+function historyReset(state) {
+  const nextState = {...state}
+  nextState.data = []
+  lsHistory.set(nextState)
+  return nextState
+}
+
 const reducer = (state = defaultState, nextAction) => {
   switch (nextAction.type) {
     case action.HISTORY_ADD_NAME:
@@ -69,6 +76,8 @@ const reducer = (state = defaultState, nextAction) => {
       return historyRemoveName(state, nextAction)
    case action.HISTORY_INITIALIZE:
       return historyInitialize(state)
+   case action.HISTORY_RESET:
+       return historyReset(state)
     default:
       return state
       break

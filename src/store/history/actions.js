@@ -1,6 +1,7 @@
 export const HISTORY_ADD_NAME = 'HISTORY_ADD_NAME'
 export const HISTORY_REMOVE_NAME = 'HISTORY_REMOVE_NAME'
 export const HISTORY_INITIALIZE = 'HISTORY_INITIALIZE'
+export const HISTORY_RESET = 'HISTORY_RESET'
 
 export const historyAddName = nextName => ({
   type: HISTORY_ADD_NAME,
@@ -15,4 +16,8 @@ export const historyRemoveName = nextName => ({
 export const historyInitialize = nextMatch => ({
   type: HISTORY_INITIALIZE,
   nextMatch
+})
+
+export const historyReset = () => ({
+  type: HISTORY_RESET
 })

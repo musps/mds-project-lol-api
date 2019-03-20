@@ -42,9 +42,14 @@ const onSuccessSetData = nextData => {
 
 const onSuccessSetMatch = nextData => store.dispatch(summonerSetMatch(nextData))
 
-const HomePageView = ({ inputRef, size, value, onChangeName, onSubmit, historySearch }) => {
+const HomePageView = ({ isMainView = true, inputRef, size, value, onChangeName, onSubmit, historySearch }) => {
   return (
     <div className={`homePage homePage__${size}`}>
+
+      {isMainView &&
+        <h1>Stats.win</h1>
+      }
+
       <form
         className="formSelectSummoner"
         onSubmit={e => preventDefault(e)(onSubmit)}
@@ -145,15 +150,17 @@ class HomePage extends Component {
       if (summonerName !== '') {
         onSubmitSaveName(summonerName)
         onChangeHistoryAddName(summonerName)
+        this.props.history.push(`/summoner/${summonerName}`)
         const endpoint = 'http://127.0.0.1:8080'
         const summonerData =  await summonerGetData(summonerName);
         onSuccessSetData(summonerData.data.data)
-        this.props.history.push(`/summoner/${summonerName}`)
       }
     } catch (e) {
-      this.props.history.push(`/summoner/${summonerName}`)
+      // this.props.history.push(`/summoner/${summonerName}`)
     }
   }
+
+  isMainView = () => this.props.location.pathname === '/'
 
   render() {
     const { tmpSummonerName, summonerName } = this.props.summoner
@@ -167,6 +174,7 @@ class HomePage extends Component {
         onSubmit={onSubmit}
         historySearch={this.props.historySearch.data}
         inputRef={this.state.inputRef}
+        isMainView={this.isMainView()}
       />
     )
   }
