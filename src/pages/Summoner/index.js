@@ -11,15 +11,15 @@ import Button from '@atlaskit/button'
 
 import './index.scss'
 
-import store from '../../store/rootStore'
+import store from '@store/rootStore'
 
-import { SummonerRankTree } from '../../components/SummonerRankCard'
-import { MatchHistory } from '../../components/MatchHistory'
-import LoaderComponent from '../../components/Loader'
+import { SummonerRankTree } from '@components/SummonerRankCard'
+import { MatchHistory } from '@components/MatchHistory'
+import LoaderComponent from '@components/Loader'
 
-import { summonerGetData, summonerUpdateLastMatch } from '../../store/summoner/requests'
-import { summonerSetMatch, summonerSetLoaderMatch } from '../../store/summoner/actions'
-import { championMock } from '../../store/champion/reducer'
+import { summonerGetData, summonerUpdateLastMatch } from '@store/summoner/requests'
+import { summonerSetMatch, summonerSetLoaderMatch } from '@store/summoner/actions'
+import { championMock } from '@store/champion/reducer'
 
 const onSuccessSetMatch = nextData => store.dispatch(summonerSetMatch(nextData))
 

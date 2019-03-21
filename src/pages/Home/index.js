@@ -6,21 +6,21 @@ import { connect } from 'react-redux'
 
 import './index.scss'
 
-import store from '../../store/rootStore'
+import store from '@store/rootStore'
 
 import {
     summonerSetName,
     summonerSaveName,
     summonerSetData,
     summonerSetMatch
-} from '../../store/summoner/actions'
+} from '@store/summoner/actions'
 import {
   historyAddName,
   historyRemoveName,
   historyInitialize
-} from '../../store/history/actions'
-import { summonerGetData, summonerGetLastMatch } from '../../store/summoner/requests'
-import SearchHistoryComponent from '../../components/SearchHistory'
+} from '@store/history/actions'
+import { summonerGetData, summonerGetLastMatch } from '@store/summoner/requests'
+import SearchHistoryComponent from '@components/SearchHistory'
 
 function preventDefault(e) {
   e.preventDefault()
